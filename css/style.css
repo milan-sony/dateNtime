@@ -1,0 +1,70 @@
+:root {
+    --Oswald-font: 'Oswald', sans-serif;
+    --Roboto-font: 'Roboto', sans-serif;
+    --RobotoMono-font: 'Roboto Mono', monospace;
+}
+/* Home section */
+.home-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../image/img.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* main */
+.date-time-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* date */
+.date{
+    margin: 0;
+    color: white;
+    font-family: var(--Oswald-font);
+    font-size: 60px;
+    padding-bottom: 20px;
+}
+
+/* time */
+.time{
+    margin: 0;
+    color: white;
+    font-family: var(--Oswald-font);
+    font-size: 120px;
+    padding-bottom: 20px;
+}
+
+/* day */
+.wish{
+    margin: 0;
+    color: white;
+    font-family: var(--RobotoMono-font);
+    font-size: 30px
+}
+
+/* Custom Media Query */
+/* small devices */
+@media (max-width: 576px) {
+    .date{
+        font-size: 30px;
+    }
+    .time{
+        font-size: 60px;
+    }
+}
+/* medium devices */
+@media (max-width: 768px) {
+
+}
+/* large devices */
+@media (max-width: 992px) {
+
+}
+/* extra large devices */
+@media (max-width: 1200px) {
+
+}
