@@ -1,3 +1,3 @@
-# daynnight
+# dateNtime
 
-<a href="https://milan-sony.github.io/daynnight/">Live Link</a>
+<a href="https://milan-sony.github.io/dateNtime/">Live Link</a>
