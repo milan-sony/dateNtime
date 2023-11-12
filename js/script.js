@@ -14,7 +14,7 @@ todayDate.innerHTML = formattedDate;
 let toDaySpan = document.getElementById("today")
 let todayObj = new Date()
 let dayNumber = todayObj.getDay()
-let daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"]
+let daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 let today = daylist[dayNumber]
 toDaySpan.innerHTML = today
 
