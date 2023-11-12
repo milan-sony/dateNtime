@@ -18,6 +18,26 @@ let daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Sat
 let today = daylist[dayNumber]
 toDaySpan.innerHTML = today
 
+//day wish
+function getGreeting() {
+    var currentTime = new Date();
+    var currentHour = currentTime.getHours();
+
+    var greeting;
+
+    if (currentHour >= 5 && currentHour < 12) {
+        greeting = 'Good Morning';
+    } else if (currentHour >= 12 && currentHour < 17) {
+        greeting = 'Good Afternoon';
+    } else {
+        greeting = 'Good Evening';
+    }
+
+    return greeting;
+}
+
+document.getElementById('greeting').innerText = getGreeting();
+
 // current time
 function updateClock() {
     var currentTime = new Date();
