@@ -2,7 +2,7 @@
 let currentDate = new Date();
 let year = currentDate.getFullYear();
 let month = currentDate.getMonth() + 1; 
-//Months are zero-based, so adding 1
+//months are zero-based, so adding 1
 let day = currentDate.getDate();
 
 let formattedDate = `${day}/${month}/${year}`;
@@ -17,6 +17,37 @@ let dayNumber = todayObj.getDay()
 let daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 let today = daylist[dayNumber]
 toDaySpan.innerHTML = today
+
+//setting the background image
+let bgImg = document.getElementById("bg-img");
+
+function setBackgroundImage() {
+    //URL of the image
+    let imageUrl = 'https://picsum.photos/1920/1080';
+    //fetch the image using fetch()
+    fetch(imageUrl)
+    .then(response => {
+        if (!response.ok) {
+            console.error("Network Response Failed",response.statusText)
+        }
+        return response.blob();
+    })
+    .then(blob => {
+        //convert the blob to a data URL
+        let imageUrl = URL.createObjectURL(blob);
+        //set the background image of the body
+        bgImg.style.backgroundImage= `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageUrl})`;
+    })
+    .catch(error => {
+        console.error('Error Fetching Image:', error);
+        bgImg.style.backgroundImage= `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/img.jpg')`;
+    });
+}
+
+// call the function to set the background image
+setBackgroundImage();
+// call the function to set the background image in every 2 min
+setInterval(setBackgroundImage, 120000);
 
 //day wish
 function getGreeting() {
@@ -46,11 +77,11 @@ function updateClock() {
     var seconds = currentTime.getSeconds();
     var period = hours >= 12 ? 'PM' : 'AM';
 
-    //Convert to 12-hour format
+    //convert to 12-hour format
     hours = hours % 12;
     hours = hours ? hours : 12; //Handle midnight (12 AM)
 
-    //Add leading zero to minutes and seconds if needed
+    //add leading zero to minutes and seconds if needed
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
@@ -59,8 +90,8 @@ function updateClock() {
     document.getElementById('time').innerHTML = timeString;
 }
 
-//Update the clock every second
+//update the clock every second
 setInterval(updateClock, 1000);
 
-//Initial update
+//initial update
 updateClock();
