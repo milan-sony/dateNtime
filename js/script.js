@@ -36,11 +36,11 @@ function setBackgroundImage() {
         //convert the blob to a data URL
         let imageUrl = URL.createObjectURL(blob);
         //set the background image of the body
-        bgImg.style.backgroundImage= `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageUrl})`;
+        bgImg.style.backgroundImage= `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageUrl})`;
     })
     .catch(error => {
         console.error('Error Fetching Image:', error);
-        bgImg.style.backgroundImage= `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/img.jpg')`;
+        bgImg.style.backgroundImage= `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/img.jpg')`;
     });
 }
 
